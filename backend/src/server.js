@@ -6,10 +6,11 @@ import { connectDB } from "./lib/db.js";
 const app = express();
 
 // Middleware (optional)
-app.use(express.json());
+app.use(express.json()); // ai one 
 
 // Use routes
 app.use("/api/auth", authRoutes);
+// app.use(express.json()); //video one 
 
 // Set PORT from .env or fallback
 const PORT = process.env.PORT || 5001;
