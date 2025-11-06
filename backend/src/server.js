@@ -1,5 +1,6 @@
 import express from "express";
 import "dotenv/config"; // loads .env automatically
+import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.route.js";
 import { connectDB } from "./lib/db.js";
 
@@ -7,6 +8,7 @@ const app = express();
 
 // Middleware (optional)
 app.use(express.json()); // ai one 
+app.use(cookieParser()); //
 
 // Use routes
 app.use("/api/auth", authRoutes);
